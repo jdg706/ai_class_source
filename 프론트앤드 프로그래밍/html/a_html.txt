@@ -1,0 +1,269 @@
+HTML
+0. 에디터 설치
+
+1. 정의
+HTML(Hyper Text Markup Language)
+- 웹페이지 문서를 구성하는 언어
+
+- Hyper Text : 다른 페이지로 이동 할 수 있는 기술
+- Markup Language : 태그로 구성된 언어
+- 확장자 : html. htm
+
+
+2. 기본 구조
+<!DOCTYPE html> : HTML 문서의 버전(HTML5 버전)
+<html>
+   <head></head> : 보이지 않는 부분을 주로 정의, 사이트의 자원, 정보 주로 정의
+   <body></body> : 보이는 부분을 주로 정의
+</html>
+
+3. HTML 태그(요소)
+	태그
+	<태그명>내용</태그명>
+          (여는 태그)      (닫는 태그)
+	
+	
+	<태그명> : 단일 태그 - 내용이 없는 태그(출력 용도가 X)
+		예) <meta />
+			
+			-> /는 생략 가능  <태그명> 예) <meta>
+			
+
+4. 태그 
+
+5. 주석(Comments)
+  <!-- 설명 --> : 브라우저가 출력 안함
+  1) 설명, 주해
+  2) 특정 태그의 출력 배제
+  
+
+6 태그 정리
+1) HTML 링크(Links)
+a	href : 이동할 경로(URL -Uniform Resource Locator)
+	target : 웹페이지를 보여줄 창
+		- _self : 현재 장(기본 값)
+		- _blank : 새로운 창
+		- _parnmt : 부모창
+		- _top : 가장 상위에 있는 창
+		- 창의 이름 : 부모창에서 지정된 이름의 자식창으로 이동
+
+iframe : 웹 문서에 포함할 수 있는 브라우저 창 - 자식 창으로 사용되는 경우가 많다.
+	- src : 웹 페이지의 경로(URL)
+	- width : 창의 너비
+	- height : 창의 높이
+	- name : 창의 이름
+
+2) 경로 
+
+	* 절대경로
+	: 전체 경로
+	예) 이지미 전체 경로
+	file:///C:/Users/admin/Desktop/장동건/02 프론트앤드 프로그래밍/html/images/logo.png
+		 
+	* 상대경로
+	: 기준 경로에 상대적인 경로 지정 - 브라우저 출력되는 문서의 경로
+	예) file:///C:/Users/admin/Desktop/장동건/02 프론트앤드 프로그래밍/html/ - 기준 경로
+	--> images/logo.png
+
+	예) html/sub -> sub 상위 경로의 이미지를 가져올 경우
+	현재 위치 : file:///C:/Users/admin/Desktop/장동건/02 프론트앤드 프로그래밍/html/sub/ex06.html
+	file:///C:/Users/admin/Desktop/장동건/02 프론트앤드 프로그래밍/html/sub/ - 기준 경로
+	--> ../images/logo.png = 상위 폴더의 이미지를 가져옴
+
+	참고)
+	. : 현재 경로
+	.. : 상위 경로
+		
+3) 테이블
+	- 표를 구성하는 태그
+-----------------------------------------------------------------------------------
+	<table>
+		<thead> : 테이블 컬럼 영영
+			<tr> : 행
+				<th>항목1</th>
+				<th>항목2</th>
+				....
+			</tr>
+		</thead>
+		<tbody>
+			<tr> : 행
+				<td>값1</td> : 열
+				<td>값2</td>
+				...
+			</tr>
+		</tbody>
+	<tfoot> : 표에 대한 요약 정보 ..
+	....
+	</tfoot>	
+	</table>
+----------------------------------------------------------------------------------
+	<th> : 행
+	<td> : 열
+
+	- colspan  : 열 병합
+		colspan='3' -> 3개의 칸을 하나의 칸으로 합친다
+
+	- rowspan  : 행 병합
+		rowspan='3' -> 3개의 칸을 하나의 칸으로 합친다
+
+	- align :	left - 왼쪽 정렬(기본값)
+	          	right - 오른쪽 정렬
+		center - 가운데 정렬
+
+	- valign :	top - 위쪽으로 정렬
+		bottom - 아래쪽으로 정렬
+		middle - 가운데로 정렬
+
+
+4) 리스트 - 목록
+ul ( UnOrdered List) : 목록 순서를 표기하지 않는 태그
+	- css 속정 중 list-style-type :	disc - 기본값, 채워진 둥근 점
+				circle - 채워지지 않은 둥근 점
+				square - 사각형 모양
+				none - 구분 아이콘 x
+
+	li (List Item) : 목록 항목
+
+ol (Ordered List) : 목록 순서를 표기하는 태그
+	- type : 	1 - 기본값, 숫자로 순서로 표기
+		a - 소문자 a, b, c .. 순서로 표기
+`		A - 대문자 A, B, C .. 순서로 표기
+		i - 소문자 로마자로 표기
+		I - 대문자 로마자로 표기
+
+	li (List Item) : 목록 항목
+
+dl (Description List) : 설명 목록, 항목명, 항목 값
+	dt : 항목 명
+	dd : 항목 값
+
+
+5) 이미지
+	<img src : 이미지 경로>
+		 - widht : 이미지의 너비
+		 - heght : 이미지의 높이	
+		( 너비, 높이를 함께 설정하면 이미지의 왜곡이 발생할 가능성이 높다. )
+		( 너비, 높이 중에서 한가지 기준으로 설정하는게 좋다. )
+		 - alt : 대체 텍스트 ( 이미지가 출력될 수 없는 경우 대신 출력되는 문자 )
+			-> 설명을 들을수 있게 alt는 필수 적으로 넣어주는게 좋다 ( 음성인식 )
+
+7. Block & Inline 태그
+1) Block 태그 : 문단을 표현하는 태그
+  예) p, div, form ... 태그 
+    - 태그와 태그 사이에 줄개행
+    - 너비, 높이를 스타일로 지정 가능
+
+2) Inline 태그 : 문장을 표현하는 태크
+  예) a, span, i, ... 태그
+    - 태그와 태그 사이에서 줄개행 하지 않음
+    - 너비, 높이를 스타일로 지정 불가
+    - 여백은 좌우만 가능
+
+8. HTML 속성(attributes)	
+		
+9. meta 태그
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+</html>
+
+10. 시멘틱 요소(태그)
+	- 의미가 있는 태그 
+	- 태그명만 봐도 어떤 태그인지 알수 있는 태그 
+	
+	<table>~</table> : 표를 만드는 태그
+	
+	<header>
+	<nav>
+	<section>
+	<main>
+	<article>
+	<footer> ...
+
+
+--------------------------------------------------------
+id : 한개의 대상만 선택 가능, 이름은 중복 되면 안됨
+class : 여러개 대상을 선택할때 사용
+--------------------------------------------------------
+
+	
+11. 엔티티 문자 : 예약되어 있는 문자 표기 
+&nbsp;	 공백 1개
+&lt;	 <
+&gt;	 >
+&amp;	 &
+&quot;	 "
+&apos;	 '
+&cent;	 ¢
+&pound;	 £
+&yen;	 ¥
+&euro;	 €
+&copy	 ©
+&reg;	 ®
+
+
+12. 양식 태그(form)
+form
+	(속성)action : 양식을 처리할 제출 경로(서버쪽 URL)
+	(속성)method : 처리 방식 - GET(기본값), POST, PATCH, DELETE, OPTIONS, HEAD
+
+	input 	
+	       	type 	text : 한줄 텍스트(기본값)
+			password : 비밀번호 입력 텍스트(감춤 처리)	
+			radio : 여러개 중에서 한개를 선택, name 속성으로 선택 그룹을 묶는다.
+
+				lable : 태그로 감싸면 텍스트를 클릭해고 선택이 된다.
+				checked : 선택된 상태로 변경
+
+			checkbox : 여러개 주에서 여러개를 선택한다.
+				checked : 선택된 상태로 변경
+
+			submit : 양식 제출 버튼
+			reset, button
+			number : 숫자만 입력 가능
+			email : 이메일 형식의 문자만 입력 가능, 형식이 맞지 않으면 양식 제출 불가
+			date : 날짜 형식으로 입력 받는 경우, 선택할 수 있는 달력이 노출
+			time : 시간 형식
+			datetime : 날짜와 시간
+			range : 번위 선택
+				max : 최대값, min : 최소값, step : 증감 단위
+			color : 색상 선택
+			hidden : 사용자가 입력하는 입력 항목이 아니다. 양식에 고정해서 서버에 전당하는 값
+			file : 파일 선택, 클릭시 파일 탐색기 노출
+				accept="image/*" : 이미지 형식의 파일만 선택 가능 제한 (파일의 형식을 제한하는 경우 accept)
+				multiple : 파일 여러개 선택 가능
+
+
+		value : 값을 설정. 사용자가 입력하는 태그인 경우는 입력값이 자동으로 value로 설정
+		name : 전송할 데이터의 항목명, 없으면 데이터의 전송과 수신이 불가
+		required : 양식을 제출할때 필수로 요구되는 항목
+		readonly : 읽기 전용, 사용자가 직접 입력 X, 데이터 전송 가능
+		disabled : 입력 불가 처리, 데이터 전송 불가
+		placeholder : 입력 값이 없는 경우 대체 안내 문구
+		minlength : 최소 길이 한정
+		maxlength : 최대 길이 한정
+		
+
+
+	button  ( input submit 을 대신해서 사용 가능 )
+		type 	submit : 기본값, 양식 제출
+			reset : 입력 항목 초기화
+			button : 일반적인 버튼
+
+	textarea : 여러줄 텍스트를 입력받는 경우
+		rows : 행의 갯수
+		cols : 열의 갯수
+
+	select : 여러개 항목중에서 한개 또는 그 이상을 선택할때
+		(속성)multiple : 여러개 선택 가능
+		(속성)size : 한번에 보이는 항목 갯수
+		option : 선택 항목
+			selected : 선택 처리
+
+
+
+참고)
+대상을 특정하기 위한 용도로 사용되는 속성
+id : 대상 한개를 특정하기 위한 속성
+class : 
