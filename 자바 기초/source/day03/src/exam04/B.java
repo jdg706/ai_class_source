@@ -1,4 +1,11 @@
 package exam04;
 
-public class B {
+import exam03.A;
+
+public class
+B extends A {
+    void printNumC() {
+        System.out.println(numC);
+
+    }
 }
