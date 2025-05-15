@@ -12,15 +12,20 @@ public class JoinService {
     private JoinValidator validator;
     private MemberDao memberDao;
 
-    @Autowired
-    public void setValidator(JoinValidator validator) {
+    public JoinService(JoinValidator validator, MemberDao memberDao) {
         this.validator = validator;
-    }
-
-    @Autowired
-    public void setMemberDao(MemberDao memberDao) {
         this.memberDao = memberDao;
     }
+
+//    @Autowired
+//    public void setValidator(JoinValidator validator) {
+//        this.validator = validator;
+//    }
+//
+//    @Autowired
+//    public void setMemberDao(MemberDao memberDao) {
+//        this.memberDao = memberDao;
+//    }
 
     public void process(RequestJoin form) {
         validator.validate(form); // 유효성 검사

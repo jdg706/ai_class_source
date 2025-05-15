@@ -2,12 +2,32 @@ package org.koreait.configs;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 
 import java.time.format.DateTimeFormatter;
 
 @Configuration
 //@Import(DBConfig.class)
 //@ComponentScan({"org.koreait.member", "org.koreait.configs"})
+//@ComponentScan("org.koreait")
+
+//@ComponentScan(basePackages = "org.koreait",
+//        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = ManualBean.class))
+
+//@ComponentScan(basePackages = "org.koreait",
+//    excludeFilters = @ComponentScan.Filter(type = FilterType.ASSIGNABLE_TYPE, classes = ManualBean.class))
+
+//@ComponentScan(basePackages = "org.koreait",
+//    excludeFilters = @ComponentScan.Filter(type = FilterType.ASPECTJ,
+//    pattern = "org.koreait.member.dao.*Dao"))
+
+//@ComponentScan(basePackages = "org.koreait",
+//        excludeFilters = @ComponentScan.Filter(type = FilterType.ASPECTJ,
+//                pattern = "org.koreait.member.dao..*Dao"))
+
+//@ComponentScan(basePackages = "org.koreait",
+////    excludeFilters = @ComponentScan.Filter(type = FilterType.REGEX, pattern = "org.koreait.member\\..*Dao"))
+
 @ComponentScan("org.koreait")
 public class AppCtx2 {
 

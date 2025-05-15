@@ -1,5 +1,7 @@
 package org.koreait.member.services;
 
+import lombok.RequiredArgsConstructor;
+import org.aspectj.lang.annotation.RequiredTypes;
 import org.koreait.member.RequestLogin;
 import org.koreait.member.dao.MemberDao;
 import org.koreait.member.entities.Member;
@@ -14,6 +16,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class LoginService {
     @Autowired
     private LoginValidator validator;
