@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
+import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.validation.Validator;
 import org.springframework.web.servlet.config.annotation.*;
 
@@ -36,6 +37,8 @@ public class MvcConfig implements WebMvcConfigurer {
                 .setViewName("company/main");
 
 
+        registry.addViewController("/")
+                .setViewName("main/index");
     }
 
     @Override
