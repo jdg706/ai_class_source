@@ -14,25 +14,29 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-@Profile("dev")
+@Profile("prod")
 @Configuration
 @EnableTransactionManagement
 @EnableJdbcRepositories("org.koreait")
-public class DBConfig extends AbstractJdbcConfiguration {
+public class DBConfig2 extends AbstractJdbcConfiguration {
 
+    @Value("${db.username}")
+    private String username;
 
+    @Value("${db.password}")
+    private String password;
 
     @Bean(destroyMethod = "close")
     public DataSource dataSource() {
-        System.out.println("dev - dataSource()");
-
+        System.out.println("prod - dataSource()");
+        System.out.printf("username=%s, password=%s%n", username, password);
 
         DataSource ds = new DataSource();
         // 연결 설정
         ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
         ds.setUrl("jdbc:mysql://localhost:3306/study2");
-        ds.setUsername("study2");
-        ds.setPassword("1234");
+        ds.setUsername(username);
+        ds.setPassword(password);
 
         // 커넥션 풀 설정
         ds.setInitialSize(2);
